@@ -30,8 +30,10 @@ module.exports = React.createClass({
   },
 
   setStorage() {
-    AsyncStorage.setItem('tasks', JSON.stringify(this.state.tasks));
-    AsyncStorage.setItem('completedTasks', JSON.stringify(this.state.completedTasks));
+    setTimeout(() => {
+      AsyncStorage.setItem('tasks', JSON.stringify(this.state.tasks));
+      AsyncStorage.setItem('completedTasks', JSON.stringify(this.state.completedTasks));
+    }, 500)
   },
 
   renderList(tasks) {
